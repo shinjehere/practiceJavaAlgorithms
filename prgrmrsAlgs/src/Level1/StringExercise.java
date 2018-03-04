@@ -12,17 +12,19 @@ public class StringExercise{
  // String을 배열로 저장
  // 해당 위치에 있는 글자를 반환. 
     	
-    	char[] array = word.toCharArray();
-    	int middle = array.length/2;
-    	char result = ' ';
+    	String[] array = word.split("");
+
+    	String result = array.toString();
     	
-    	if(array.length%2 == 0) {
-    		result += array[middle] + array[middle+1];
-    	}else {
-    		result += array[middle+1];
+    	for(int i=0; i<array.length; i++) {
+    		if(array.length%2 ==1) {
+    			result = array[array.length/2];
+    		}else {
+    			result = array[array.length/2-1] +  array[array.length/2];
+    		}
     	}
     	
-    	return String.valueOf(result);    
+    	return result;    
     }
     // 아래는 테스트로 출력해 보기 위한 코드입니다.
     public static void  main(String[] args){

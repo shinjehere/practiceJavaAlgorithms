@@ -16,9 +16,8 @@ A에서 2, B에서 3을 뽑아 곱하여 더합니다.
 public class GetMinSum {
 	public int getMinSum(int[] A, int[] B) {
 		int answer = 0;
-		int x = 0;
 		int n = A.length;
-		int sum[] = new int[n * n];
+
 		int num1[] = new int[n];
 		int num2[] = new int[n];
 
@@ -31,15 +30,7 @@ public class GetMinSum {
 		for (int b = 0; b < n; b++) {
 			num2[b] = B[b];
 		}
-		for (int i = 0; i < n; i++) {
-			for (int j = n - 1; j >= 0; j--) {
-				sum[x] = num1[i] * num2[j];
-				x++;
-			}
-		}
-		for (int i = 0; i < n; i++) {
-			answer = answer + sum[(n + 1) * i];
-		}
+		
 		return answer;
 	}
 
